@@ -17,18 +17,18 @@ package com.nelioalves.workshopmongo.repository;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
-import com.nelioalves.workshopmongo.domain.User;
+import com.nelioalves.workshopmongo.domain.Post;
 
 //
-//interface USERREPOSITORY
+//interface POSTREPOSITORY
 //REPOSITORY... os repository fazem OPERACOES basicas de ACESSO AO BANCO
 //
 //implementando o REPOSITORY com o SPRING DATA usando o ANNOTATION
 //				@REPOSITORY
 @Repository
-//a INTERFACE USERREPOSITORY vai HERDAR da INTERFACE ou CLASSE nao sei
+//a INTERFACE POSTREPOSITORY vai HERDAR da INTERFACE ou CLASSE nao sei
 //MongoRepository q ja existe no SPRINGDATA... e passando q sera recebido
-//dados do TIPO USER e q o TIPO do ID(do user) é do tipo STRING
-public interface UserRepository extends MongoRepository<User, String>{
+//dados do TIPO POST e q o TIPO do ID(do post) é do tipo STRING
+public interface PostRepository extends MongoRepository<Post, String>{
 
 }

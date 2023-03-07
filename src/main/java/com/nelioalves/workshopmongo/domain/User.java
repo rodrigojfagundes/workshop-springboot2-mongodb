@@ -1,3 +1,8 @@
+//
+//criar o SUBPACOTE DOMAIN, q significa DOMINIO, DOMINIO do 
+//NEGOCIO, ou seja as entidades do negocio vao estar nessa 
+//classe... e dentro do subpacote DOMAIN criar a classe USER
+
 package com.nelioalves.workshopmongo.domain;
 
 import java.io.Serializable;
@@ -5,18 +10,30 @@ import java.io.Serializable;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+
+//colocando @DOCUMENT e @ID para dizer q essa CLASS é 
+//uma COLEÇÂO/TABELA do banco MONGODB
+	//o collection = "USER" e para dizer q a colecao no MONGO o nome e 
+	//user
 @Document
 public class User implements Serializable{
 	private static final long serialVersionUID = 1L;
+	
 
+	//criando os atributo
+	//o @ID e por causa do ID para o MONGO DB como chave primary
 	@Id
 	private String id;
 	private String name;
 	private String email;
 	
+	
+	//criando o metodo construtor vazio
 	public User() {
 	}
 	
+	
+	//criando o metodo construtor com argumentos
 	public User(String id, String name, String email) {
 		super();
 		this.id = id;
@@ -24,7 +41,9 @@ public class User implements Serializable{
 		this.email = email;
 	}
 	
-
+	
+	
+	//criando os metodos GET e SET
 	public String getId() {
 		return id;
 	}
@@ -54,6 +73,10 @@ public class User implements Serializable{
 		this.email = email;
 	}
 	
+	
+	
+	//criando os metodos HASHCODE e EQUALS para q possamos
+	//comparar os objetos pelo o valor do ID
 	@Override
 	public int hashCode() {
 		final int prime = 31;
