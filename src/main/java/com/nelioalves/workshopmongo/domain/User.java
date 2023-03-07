@@ -8,11 +8,6 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-
-	//colocando @DOCUMENT e @ID para dizer q essa CLASS é 
-	//uma COLEÇÂO/TABELA do banco MONGODB
-	//o collection = "USER" e para dizer q a colecao no MONGO o nome e 
-	//user
 @Document
 public class User implements Serializable{
 	private static final long serialVersionUID = 1L;
@@ -28,7 +23,7 @@ public class User implements Serializable{
 
 	public User() {
 	}
-	
+
 	public User(String id, String name, String email) {
 		super();
 		this.id = id;
@@ -36,7 +31,7 @@ public class User implements Serializable{
 		this.email = email;
 	}
 	
-
+	
 	public String getId() {
 		return id;
 	}
@@ -77,7 +72,9 @@ public class User implements Serializable{
 		this.posts = posts;
 	}
 	
-
+	
+	//criando os metodos HASHCODE e EQUALS para q possamos
+	//comparar os objetos pelo o valor do ID
 	@Override
 	public int hashCode() {
 		final int prime = 31;

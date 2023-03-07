@@ -5,11 +5,8 @@ import org.springframework.stereotype.Repository;
 
 import com.nelioalves.workshopmongo.domain.User;
 
-//
-//interface USERREPOSITORY
-//REPOSITORY... os repository fazem OPERACOES basicas de ACESSO AO BANCO
-//
 @Repository
+
 public interface UserRepository extends MongoRepository<User, String>{
 
 }

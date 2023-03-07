@@ -13,7 +13,7 @@ import com.nelioalves.workshopmongo.services.exception.ObjectNotFoundException;
 
 @Service
 public class UserService {
-	
+
 	@Autowired
 	private UserRepository repo;
 
@@ -22,7 +22,6 @@ public class UserService {
 	}
 	
 	public User findById(String id) {
-
 		Optional<User> obj = repo.findById(id);
 		return obj.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado"));
 	}
@@ -38,7 +37,6 @@ public class UserService {
 
 	public User update(User obj) {
 		User newObj = findById(obj.getId());
-
 		updateData(newObj, obj);
 		return repo.save(newObj);
 	}

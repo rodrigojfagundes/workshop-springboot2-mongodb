@@ -8,13 +8,10 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.nelioalves.workshopmongo.dto.AuthorDTO;
 
-//criando a classe POST com a classe AuthorDTO aninhada/associada dentro 
-//do post, para sabermos quem criou a POSTAGEM
-
 @Document
 public class Post implements Serializable {
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	private String id;
 	private Date date;
@@ -23,10 +20,10 @@ public class Post implements Serializable {
 	private AuthorDTO author;
 	
 	
-	//metodo construtor vazio
 	public Post() {
 	}
 	
+
 	public Post(String id, Date date, String title, String body, AuthorDTO author) {
 		super();
 		this.id = id;
@@ -37,6 +34,7 @@ public class Post implements Serializable {
 	}
 	
 	
+	//gerando os GET e SET
 	public String getId() {
 		return id;
 	}
@@ -84,6 +82,8 @@ public class Post implements Serializable {
 		this.author = author;
 	}
 
+	//gerando o HASHCODE e EQUALS... para comparar
+	//valores
 	@Override
 	public int hashCode() {
 		final int prime = 31;
