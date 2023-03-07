@@ -2,18 +2,26 @@ package com.nelioalves.workshopmongo.resources.exception;
 
 import java.io.Serializable;
 
+//
+//classe StandardError é uma classe que te uma
+//ESTRUTURA de ERRO ou seja vai ter os CAMPOS para 
+//serem PREENCHIDOS, tipo Timestamp, Status,
+//Error, Exception, etc...
+//
 public class StandardError implements Serializable{
 	private static final long serialVersionUID = 1L;
-
+	
+	//declarando os atributos
 	private Long timestamp;
 	private Integer status;
 	private String error;
 	private String message;
 	private String path;
-	
+
 	public StandardError() {
 	}
 	
+
 	public StandardError(Long timestamp, Integer status, String error, String message, String path) {
 		super();
 		this.timestamp = timestamp;
@@ -71,5 +79,7 @@ public class StandardError implements Serializable{
 
 	public void setPath(String path) {
 		this.path = path;
-	}	
+	}
+	
+	
 }

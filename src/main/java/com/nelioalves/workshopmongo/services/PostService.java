@@ -22,7 +22,9 @@ import com.nelioalves.workshopmongo.domain.Post;
 import com.nelioalves.workshopmongo.repository.PostRepository;
 import com.nelioalves.workshopmongo.services.exception.ObjectNotFoundException;
 
-
+//
+//classe PostService, ou seja vai ser um SERVICO responsavel por
+//trabalhar com os POSTS
 @Service
 public class PostService {
 	
@@ -30,8 +32,16 @@ public class PostService {
 	private PostRepository repo;
 
 	
+	
+	//criando um metodo para buscar um POST pelo o ID
 	public Post findById(String id) {
+		//criando um VAR optional do tipo POST q recebe o REPO q é um OBJ do
+		//tipo POSTREPOSITORY, e pelo REPO chamamos o metodo HERDADO
+		//FINDONE e passamos o ID
 		Optional<Post> user = repo.findById(id);
+		//no RETURN, nos chamamos o nosso OBJ e nele chamamos o METODO
+		//ORELSETHROW e para esse metodo passamos a classe OBJECTNOTFOUND
+		//EXCEPTION com a msg objeto nao encontrado
 		return user.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado"));
 	}
 

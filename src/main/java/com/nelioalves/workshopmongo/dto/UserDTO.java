@@ -23,6 +23,7 @@ public class UserDTO implements Serializable{
 	}
 	
 	
+	//criando os GET e SET
 	public String getId() {
 		return id;
 	}

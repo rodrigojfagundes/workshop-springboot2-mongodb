@@ -11,19 +11,18 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document
 public class User implements Serializable{
 	private static final long serialVersionUID = 1L;
-
+	
 	@Id
 	private String id;
 	private String name;
 	private String email;
 	
-	
 	@DBRef(lazy = true)
 	private List<Post> posts = new ArrayList<>();
-
+	
 	public User() {
 	}
-
+	
 	public User(String id, String name, String email) {
 		super();
 		this.id = id;
@@ -72,9 +71,7 @@ public class User implements Serializable{
 		this.posts = posts;
 	}
 	
-	
-	//criando os metodos HASHCODE e EQUALS para q possamos
-	//comparar os objetos pelo o valor do ID
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
