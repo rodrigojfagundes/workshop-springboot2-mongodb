@@ -14,7 +14,7 @@ import com.nelioalves.workshopmongo.dto.CommentDTO;
 @Document
 public class Post implements Serializable {
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	private String id;
 	private Date date;
@@ -23,10 +23,10 @@ public class Post implements Serializable {
 	private AuthorDTO author;
 
 	private List<CommentDTO> comments = new ArrayList<>();
-	
-	
+			
 	public Post() {
 	}
+	
 	
 	public Post(String id, Date date, String title, String body, AuthorDTO author) {
 		super();
@@ -37,7 +37,7 @@ public class Post implements Serializable {
 		this.author = author;
 	}
 	
-
+	
 	public String getId() {
 		return id;
 	}
@@ -95,8 +95,6 @@ public class Post implements Serializable {
 		this.comments = comments;
 	}
 	
-	
-
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -121,6 +119,4 @@ public class Post implements Serializable {
 			return false;
 		return true;
 	}
-
-
 }

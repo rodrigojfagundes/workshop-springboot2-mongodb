@@ -14,6 +14,8 @@
 
 package com.nelioalves.workshopmongo.repository;
 
+import java.util.List;
+
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
@@ -27,5 +29,7 @@ import com.nelioalves.workshopmongo.domain.Post;
 //MongoRepository q ja existe no SPRINGDATA... e passando q sera recebido
 //dados do TIPO POST e q o TIPO do ID(do post) é do tipo STRING
 public interface PostRepository extends MongoRepository<Post, String>{
-
+	
+	List<Post> findByTitleContainingIgnoreCase(String text);
+	
 }

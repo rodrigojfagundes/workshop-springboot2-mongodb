@@ -1,3 +1,12 @@
+//
+//usando o padrao DTO para retornar USUARIO
+
+//DTO é uma classe q sera usada COMO OBJ de transferencia de DADOS, 
+//ou seja vamos supor q eu tenho um OBJ do tipo USUARIO q tem NOME,
+//IDADE, EMAIL, CIDADE, etc...mas eu quero transferir(USAR) so o 
+//NOME e IDADE, dai eu crio um DTO para passar isso
+//pois eu passo para os atributos do USERDTO apenas os ATRIBUTOS
+//NOME e IDADE do OBJ USER verdadeiro
 package com.nelioalves.workshopmongo.dto;
 
 import java.io.Serializable;
@@ -22,8 +31,6 @@ public class UserDTO implements Serializable{
 		email = obj.getEmail();
 	}
 	
-	
-	//criando os GET e SET
 	public String getId() {
 		return id;
 	}
