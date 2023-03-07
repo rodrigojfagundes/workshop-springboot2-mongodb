@@ -11,13 +11,13 @@ import com.nelioalves.workshopmongo.repository.UserRepository;
 
 @Configuration
 public class Instantiation implements CommandLineRunner {
-	
+
 	@Autowired
 	private UserRepository userRepository;
-	
+
 	@Override
 	public void run(String... args) throws Exception {
-		
+	
 		userRepository.deleteAll();
 
 		User maria = new User(null, "Maria Brown", "maria@gmail.com");
