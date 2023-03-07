@@ -14,10 +14,8 @@ public class User implements Serializable{
 	private String name;
 	private String email;
 	
-
 	public User() {
 	}
-	
 	
 	public User(String id, String name, String email) {
 		super();
@@ -26,7 +24,6 @@ public class User implements Serializable{
 		this.email = email;
 	}
 	
-
 	public String getId() {
 		return id;
 	}
@@ -56,7 +53,6 @@ public class User implements Serializable{
 		this.email = email;
 	}
 	
-
 	@Override
 	public int hashCode() {
 		final int prime = 31;

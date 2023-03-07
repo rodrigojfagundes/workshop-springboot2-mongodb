@@ -10,7 +10,7 @@ import com.nelioalves.workshopmongo.repository.UserRepository;
 
 @Service
 public class UserService {
-
+	
 	@Autowired
 	private UserRepository repo;
 
