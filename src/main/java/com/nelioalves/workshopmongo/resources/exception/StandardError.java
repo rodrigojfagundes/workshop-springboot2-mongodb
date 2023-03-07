@@ -24,6 +24,8 @@ public class StandardError implements Serializable{
 		this.path = path;
 	}
 	
+	
+	//criando os GET e SET
 	public Long getTimestamp() {
 		return timestamp;
 	}
@@ -71,5 +73,7 @@ public class StandardError implements Serializable{
 
 	public void setPath(String path) {
 		this.path = path;
-	}	
+	}
+	
+	
 }
