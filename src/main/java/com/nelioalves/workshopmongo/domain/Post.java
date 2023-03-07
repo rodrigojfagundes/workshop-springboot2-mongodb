@@ -6,35 +6,24 @@ import java.util.Date;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-//criando a classe POST com a classe USER aninhada/associada dentro 
-//do post, para sabermos quem criou a POSTAGEM
+import com.nelioalves.workshopmongo.dto.AuthorDTO;
 
-//colocando o @DOCUMENT para dizer q essa CLASSE é um 
-//DOCUMENT/colleção/tabela do MONGODB
 @Document
 public class Post implements Serializable {
 	private static final long serialVersionUID = 1L;
-	
-	//declarando os atributos e ANINHANDO/ASSOCIANDO a classe
-	//USER, pq cada POST/postagem tem um USER como AUTOR
-	
-		//o @ID e para dizer q ele vai ser a CHAVE o ID no banco
-		//para essa collection
+
 	@Id
 	private String id;
 	private Date date;
 	private String title;
 	private String body;
-	private User author;
-	
-	
-	//metodo construtor vazio
+	private AuthorDTO author;
+
 	public Post() {
 	}
 	
-	
-	//criando o construtor com argumentos
-	public Post(String id, Date date, String title, String body, User author) {
+
+	public Post(String id, Date date, String title, String body, AuthorDTO author) {
 		super();
 		this.id = id;
 		this.date = date;
@@ -44,7 +33,6 @@ public class Post implements Serializable {
 	}
 	
 	
-	//gerando os GET e SET
 	public String getId() {
 		return id;
 	}
@@ -84,7 +72,11 @@ public class Post implements Serializable {
 		this.body = body;
 	}
 	
-	public void setAuthor(User author) {
+	public AuthorDTO getAuthor() {
+		return author;
+	}
+	
+	public void setAuthor(AuthorDTO author) {
 		this.author = author;
 	}
 
@@ -113,11 +105,6 @@ public class Post implements Serializable {
 		} else if (!id.equals(other.id))
 			return false;
 		return true;
-	}
-
-
-	public User getAuthor() {
-		return author;
 	}
 	
 }

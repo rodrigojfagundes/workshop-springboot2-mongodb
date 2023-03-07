@@ -19,12 +19,7 @@ import org.springframework.stereotype.Repository;
 
 import com.nelioalves.workshopmongo.domain.User;
 
-//
-//interface USERREPOSITORY
-//REPOSITORY... os repository fazem OPERACOES basicas de ACESSO AO BANCO
-//
-//implementando o REPOSITORY com o SPRING DATA usando o ANNOTATION
-//				@REPOSITORY
+
 @Repository
 //a INTERFACE USERREPOSITORY vai HERDAR da INTERFACE ou CLASSE nao sei
 //MongoRepository q ja existe no SPRINGDATA... e passando q sera recebido

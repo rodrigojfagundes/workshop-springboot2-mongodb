@@ -19,16 +19,7 @@ import org.springframework.stereotype.Repository;
 
 import com.nelioalves.workshopmongo.domain.Post;
 
-//
-//interface POSTREPOSITORY
-//REPOSITORY... os repository fazem OPERACOES basicas de ACESSO AO BANCO
-//
-//implementando o REPOSITORY com o SPRING DATA usando o ANNOTATION
-//				@REPOSITORY
 @Repository
-//a INTERFACE POSTREPOSITORY vai HERDAR da INTERFACE ou CLASSE nao sei
-//MongoRepository q ja existe no SPRINGDATA... e passando q sera recebido
-//dados do TIPO POST e q o TIPO do ID(do post) é do tipo STRING
 public interface PostRepository extends MongoRepository<Post, String>{
 
 }
