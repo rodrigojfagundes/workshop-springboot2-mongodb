@@ -10,7 +10,7 @@ public class StandardError implements Serializable{
 	private String error;
 	private String message;
 	private String path;
-	
+
 	public StandardError() {
 	}
 	
@@ -24,7 +24,7 @@ public class StandardError implements Serializable{
 		this.path = path;
 	}
 	
-
+	
 	public Long getTimestamp() {
 		return timestamp;
 	}
