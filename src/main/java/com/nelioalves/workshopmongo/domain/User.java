@@ -2,10 +2,14 @@ package com.nelioalves.workshopmongo.domain;
 
 import java.io.Serializable;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document
 public class User implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
-
+	@Id
 	private String id;
 	private String name;
 	private String email;
@@ -14,7 +18,7 @@ public class User implements Serializable{
 	public User() {
 	}
 	
-
+	
 	public User(String id, String name, String email) {
 		super();
 		this.id = id;
@@ -22,7 +26,7 @@ public class User implements Serializable{
 		this.email = email;
 	}
 	
-	
+
 	public String getId() {
 		return id;
 	}
@@ -52,8 +56,7 @@ public class User implements Serializable{
 		this.email = email;
 	}
 	
-	
-	
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
