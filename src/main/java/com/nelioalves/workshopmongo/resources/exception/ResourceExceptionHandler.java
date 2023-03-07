@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 
 import com.nelioalves.workshopmongo.services.exception.ObjectNotFoundException;
 
+//classe ResourceExceptionHandler, será um 
+//manipulador de excecoes na camada de resource
 
 @ControllerAdvice
 public class ResourceExceptionHandler {
@@ -19,7 +21,7 @@ public class ResourceExceptionHandler {
 		HttpStatus status = HttpStatus.NOT_FOUND;
 		
 		StandardError err = new StandardError(System.currentTimeMillis(), status.value(), "Não encontrado", e.getMessage(), request.getRequestURI());
-		
+
 		return ResponseEntity.status(status).body(err);
 	}
 }
