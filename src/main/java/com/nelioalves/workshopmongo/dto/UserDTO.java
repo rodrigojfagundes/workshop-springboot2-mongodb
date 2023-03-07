@@ -16,7 +16,6 @@ import com.nelioalves.workshopmongo.domain.User;
 public class UserDTO implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
-
 	private String id;
 	private String name;
 	private String email;
@@ -24,12 +23,15 @@ public class UserDTO implements Serializable{
 	public UserDTO() {
 	}
 	
-
+	
 	public UserDTO(User obj) {
+	//o campo ID/NAME/EMAIL do USERDTO, vai receber os valores 
+	//do USER q foi passado ali em cima como OBJ, para fazer um USERDTO
 		id = obj.getId();
 		name = obj.getName();
 		email = obj.getEmail();
 	}
+	
 	
 	public String getId() {
 		return id;

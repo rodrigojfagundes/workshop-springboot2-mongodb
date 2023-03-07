@@ -15,6 +15,8 @@ import com.nelioalves.workshopmongo.dto.CommentDTO;
 import com.nelioalves.workshopmongo.repository.PostRepository;
 import com.nelioalves.workshopmongo.repository.UserRepository;
 
+//classe  para ADD dados do tipo USER e POST no
+//BANCO MONGO...
 @Configuration
 public class Instantiation implements CommandLineRunner {
 	
@@ -24,7 +26,6 @@ public class Instantiation implements CommandLineRunner {
 	@Autowired
 	private PostRepository postRepository;
 	
-
 	@Override
 	public void run(String... args) throws Exception {
 		
@@ -33,26 +34,35 @@ public class Instantiation implements CommandLineRunner {
 		
 		userRepository.deleteAll();
 		postRepository.deleteAll();
+			
 		
+		//instanciando 3 OBJ do tipo USER
 		User maria = new User(null, "Maria Brown", "maria@gmail.com");
 		User alex = new User(null, "Alex Green", "alex@gmail.com");
 		User bob = new User(null, "Bob Grey", "bob@gmail.com");
 		
+		//o OBJ userRepository, e como ele representa a CLASSE
+		//USERREPOSITORY e essa classe HERDA OS METODOS do MongoRepository
+		//dai nos chamamos o metodo SaveAll e salvamos os OBJ
 		userRepository.saveAll(Arrays.asList(maria, alex, bob));
+		
 		
 		Post post1 = new Post(null, sdf.parse("21/03/2018"), "Partiu viagem", "Vou viajar para São Paulo. Abraços!", new AuthorDTO(maria));
 		Post post2 = new Post(null, sdf.parse("23/03/2018"), "Bom dia", "Acordei feliz hoje!", new AuthorDTO(maria));
 		
+		
+		//instanciando os comentarios, e ATRIBUINDO eles o TEXTO
+		//DATA e AUTHOR
 		CommentDTO c1 = new CommentDTO("Boa viagem mano!", sdf.parse("21/03/2018"), new AuthorDTO(alex));
 		CommentDTO c2 = new CommentDTO("aproveite", sdf.parse("22/03/2018"), new AuthorDTO(bob));
 		CommentDTO c3 = new CommentDTO("tenha um otimo dia", sdf.parse("23/03/2018"), new AuthorDTO(alex));
 		
+		//associando os COMENTARIOS/CommentDTO aos POST
 		post1.getComments().addAll(Arrays.asList(c1, c2));
 		post2.getComments().addAll(Arrays.asList(c3));
+		
 		postRepository.saveAll(Arrays.asList(post1, post2));
-		
 		maria.getPosts().addAll(Arrays.asList(post1, post2));
-		
 		userRepository.save(maria);
 	}
 

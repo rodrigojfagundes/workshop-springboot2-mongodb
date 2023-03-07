@@ -3,6 +3,9 @@ package com.nelioalves.workshopmongo.dto;
 import java.io.Serializable;
 import java.util.Date;
 
+//classe COMMENTDTO... Pois com ele nos vamos PEGAR TODOS OS DADOS
+//do OBJ COMMENT e vamos retornar apenas alguns dados principais
+//o TEXTO, o DATE e AUTHOR
 public class CommentDTO implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
@@ -12,7 +15,7 @@ public class CommentDTO implements Serializable{
 	
 	public CommentDTO() {
 	}
-
+	
 	public CommentDTO(String text, Date date, AuthorDTO author) {
 		super();
 		this.text = text;

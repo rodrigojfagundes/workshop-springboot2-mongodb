@@ -17,11 +17,15 @@ public class User implements Serializable{
 	private String name;
 	private String email;
 	
+	
+	//List/LISTA de POSTS
+	//fazendo o USUARIO conhecer os POST dele...
 	@DBRef(lazy = true)
 	private List<Post> posts = new ArrayList<>();
-
+	
 	public User() {
 	}
+	
 	
 	public User(String id, String name, String email) {
 		super();
@@ -31,7 +35,6 @@ public class User implements Serializable{
 	}
 	
 	
-
 	public String getId() {
 		return id;
 	}
@@ -72,7 +75,7 @@ public class User implements Serializable{
 		this.posts = posts;
 	}
 	
-
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
